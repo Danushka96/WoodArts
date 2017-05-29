@@ -41,7 +41,7 @@ if ($loginlevel==1){
   	<a href='/woodarts/deliver.php'>Deliver Status</a>
   	<a href='/woodarts/process/allcustomer.php' target=blank>All Customers</a>
   	<a href='/woodarts/branch.php'>Show room Info</a>
-  	<a href='/woodarts/backuprestore.php'>Backup/Restore</a>
+  	<a href='/woodarts/backup/index.php'>Backup/Restore</a>
   </div>";
 
 }else if ($loginlevel==2){
