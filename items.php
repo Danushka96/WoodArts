@@ -30,23 +30,10 @@ if(mysqli_num_rows($result)>0){
 	</div>
 <p align="center"><img src="img/logo.png"></p>
 <h1 align="center"> Wood Arts Comapany Managment System</h1>
-<div class="container">
-	<a class="active" href="index.php">Home</a>
-	<div class="dropdown">
-    <button class="dropbtn">Add Record</button>
-    <div class="dropdown-content">
-      <a href="addcustomer.php">Add a Customer</a>
-      <a href="additem.php">Add an Item</a>
-      <a href="addorder.php">Add a Order</a>
-			<a href="adduser.php">Add New User</a>
-    </div>
-  </div>
-	<a href="items.php">Items</a>
-	<a href="customer.php">Customers</a>
-	<a href="deliver.php">Deliver Status</a>
-  <a href="updateqty.php">Update Quantity</a>
-  <a href="branch.php">Branch info</a>
-</div>
+<?php
+require_once('process/menu.php');
+echo $menu;
+ ?>
 <h1 align="center">Available Items and Quantity</h1>
 
 <table caption='All available Items' border='2' align='center' style="width:800px">

@@ -1,5 +1,5 @@
 <?php
-require_once('inc/connection.php');
+require_once('../inc/connection.php');
 session_start();
 if (!isset($_SESSION['login_user'])){
 	header("location: /woodarts/login/index.php");
@@ -27,34 +27,30 @@ if (isset($_POST['username']) || isset($_POST['password'])){
 <html>
 <head>
 	<title>WoodArts Company</title>
-<link rel="stylesheet" href="css/navmenu.css">
-<link rel="stylesheet" href="css/formbox.css">
+<link rel="stylesheet" href="../css/navmenu.css">
 <link rel="shortcut icon" href="/woodarts/img/favicon.ico" type="image/x-icon">
+<style>
+.box {
+        background-color:#e0e0d1;
+        color:black;
+        font-weight:bold;
+        margin:20px auto;
+        height:300px;
+        width: 600px;
+    }
+</style>
 </head>
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
 		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
 	</div>
-<p align="center"><img src="img/logo.png"></p>
+<p align="center"><img src="../img/logo.png"></p>
 <h1 align="center"> Wood Arts Comapany Managment System</h1>
-<div class="container">
-	<a class="active" href="index.php">Home</a>
-	<div class="dropdown">
-    <button class="dropbtn">Add Record</button>
-    <div class="dropdown-content">
-      <a href="addcustomer.php">Add a Customer</a>
-      <a href="additem.php">Add an Item</a>
-      <a href="addorder.php">Add a Order</a>
-			<a href="adduser.php">Add New User</a>
-    </div>
-  </div>
-	<a href="items.php">Items</a>
-	<a href="customer.php">Customers</a>
-	<a href="deliver.php">Deliver Status</a>
-  <a href="updateqty.php">Update Quantity</a>
-  <a href="branch.php">Branch info</a>
-</div>
+<?php
+require_once('../process/menu.php');
+echo $menu;
+ ?>
 <div class="box">
 <h1 align="center">Add New User to System</h1>
 <form method ="POST" action="adduser.php">

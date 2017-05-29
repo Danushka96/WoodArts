@@ -30,7 +30,7 @@ if (isset($POST['OrderID']) || isset($_POST['status'])){
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
 		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
 	</div>
-<p align="center"><img src="img/logo.png" width='110' height='100'></p>
+<p align="center"><img src="../img/logo.png" width='110' height='100'></p>
 <p align="Center"><u>Update Delivery Statues</u></p>
 <form method="post" action="updatedeliver.php">
 	<p align = "Center">

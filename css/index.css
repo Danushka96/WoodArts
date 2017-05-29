@@ -1,0 +1,15 @@
+.pbox {
+  background-color:#a7c3ef;
+  color:black;
+  font-weight:bold;
+  margin:20px auto;
+  height:600px;
+  width: 300px;
+  margin-left: 50px;
+  float: left;
+}
+
+img {
+    border-radius: 8px;
+    margin-left: 50px;
+}

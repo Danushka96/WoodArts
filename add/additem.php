@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['login_user'])){
-	header("location: login/index.php");
+	header("location: ../login/index.php");
 }
 ?>
 <?php
-require_once('inc/connection.php');
+require_once('../inc/connection.php');
 if (isset($_POST['itemID']) || isset($_POST['price'])){
 		$type=$_POST['type'];
 		$itemID=$_POST['itemID'];
@@ -27,34 +27,30 @@ if (isset($_POST['itemID']) || isset($_POST['price'])){
 <html>
 <head>
 	<title>WoodArts Company</title>
-<link rel="stylesheet" href="css/navmenu.css">
-<link rel="stylesheet" href="css/formbox.css">
+<link rel="stylesheet" href="../css/navmenu.css">
 <link rel="shortcut icon" href="/woodarts/img/favicon.ico" type="image/x-icon">
+<style>
+.box {
+        background-color:#e0e0d1;
+        color:black;
+        font-weight:bold;
+        margin:20px auto;
+        height:270px;
+        width: 600px;
+    }
+</style>
 </head>
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
 		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
 	</div>
-<p align="center"><img src="img/logo.png"></p>
+<p align="center"><img src="../img/logo.png"></p>
 <h1 align="center"> Wood Arts Comapany Managment System</h1>
-<div class="container">
-	<a class="active" href="/woodarts/index.php">Home</a>
-	<div class="dropdown">
-    <button class="dropbtn">Add Record</button>
-    <div class="dropdown-content">
-      <a href="/woodarts/addcustomer.php">Add a Customer</a>
-      <a href="/woodarts/additem.php">Add an Item</a>
-      <a href="/woodarts/addorder.php">Add a Order</a>
-			<a href="adduser.php">Add New User</a>
-    </div>
-  </div>
-	<a href="/woodarts/items.php">Items</a>
-	<a href="/woodarts/customer.php">Customers</a>
-	<a href="/woodarts/deliver.php">Deliver Status</a>
-  <a href="/woodarts/updateqty.php">Update Quantity</a>
-  <a href="/woodarts/branch.php">Branch info</a>
-</div>
+<?php
+require_once('../process/menu.php');
+echo $menu;
+ ?>
 <div class="box">
 <h1 align="center">Add New Item Record</h1>
 <form method ="post" action="additem.php" >
