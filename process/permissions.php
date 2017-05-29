@@ -5,7 +5,7 @@ if ($loginlevel==1){
   $permissionstat="<ol>
   <li><u><b>Add</u></b>
     <ul>
-      <li><a href='/woodarts/add/addshowroom.php'> Add new Showroom </a></li>
+      <li><a href='/woodarts/add/newbranch.php'> Add new Showroom </a></li>
       <li><a href='/woodarts/add/adduser.php'> Add New User </a></li>
       <li><a href='/woodarts/add/additem.php'> Add New Item </a></li>
       <li><a href='/woodarts/add/addcustomer.php'> Add New Customer </a></li>
@@ -15,9 +15,8 @@ if ($loginlevel==1){
   <li><u><b>Update</u></b>
     <ul>
       <li><a href='/woodarts/update/showroom.php'> Update Showroom info </a></li>
-      <li><a href='/woodarts/update/item.php'> Update Item Details </a></li>
+      <li><a href='/woodarts/update/items.php'> Update Item Details </a></li>
       <li><a href='/woodarts/update/customer.php'> Update Customer Deatils </a></li>
-      <li><a href='/woodarts/update/order.php'> Update Order </a></li>
     </ul>
   </li><br>
   <li><u><b>Delete</u></b>
@@ -47,9 +46,8 @@ if ($loginlevel==1){
   </li>
   <li><u><b>Update</u></b>
     <ul>
-      <li><a href='/woodarts/update/item.php'> Update Item Details </a></li>
+      <li><a href='/woodarts/update/items.php'> Update Item Details </a></li>
       <li><a href='/woodarts/update/customer.php'> Update Customer Deatils </a></li>
-      <li><a href='/woodarts/update/order.php'> Update Order </a></li>
     </ul>
   </li><br>
   <li><u><b>Delete</u></b>
@@ -73,7 +71,7 @@ if ($loginlevel==1){
   </li>
   <li><u><b>Update</u></b>
     <ul>
-      <li><a href='/woodarts/update/item.php'> Update Item Details </a></li>
+      <li><a href='/woodarts/update/items.php'> Update Item Details </a></li>
       <li><a href='/woodarts/process/update/deliver.php'> Update Deliver Status </a></li>
       <li><a href='/woodarts/update/updateqty.php'> Update Stock Quantity </a></li>
     </ul>
@@ -91,8 +89,5 @@ if ($loginlevel==1){
   </li><br>
 </ol>";
 }
-
-
-
 
  ?>

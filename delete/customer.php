@@ -9,11 +9,11 @@ if (isset($_POST['submit'])){
 	$query="DELETE FROM customer WHERE CID='$CID'";
 	$result=mysqli_query($connection,$query);
 	if ($result){
-		echo "<script type='text/javascript'>alert('submi successfully!')</script>";
+		echo "<script type='text/javascript'>alert('Deleted successfully!')</script>";
  	} else {
 	 	echo "<script type='text/javascript'>alert('failed!')</script>";
  }
-	}
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,11 +45,11 @@ echo $menu;
  ?>
 <div class="box">
 <h1 align="center">Delete Customer </h1>
-<form method ="post" target="_blank" action="customer.php">
+<form method ="post" action="customer.php">
       <label for="CID">Customer ID:</label>
       <input name="CID" type="text" />
       <p align="center">
-      <input name="submitin" type="Submit" value="Delete"/>
+      <input name="submit" type="Submit" value="Delete"/>
   </form>
  </div>
 </body>
