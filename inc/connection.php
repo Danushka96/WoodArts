@@ -2,7 +2,7 @@
 
 	//Connecting To the DataBase Server
 
-	$connection = mysqli_connect('localhost', 'user', 'Danu9696', 'woodsart');
+	$connection = mysqli_connect('localhost', 'root', '', 'woodsart');
 
 	//Checking Errors
 
