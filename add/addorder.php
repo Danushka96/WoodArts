@@ -45,7 +45,7 @@ if (isset($_POST['submit2'])){
 <head>
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
-<link rel="shortcut icon" href="/woodarts/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <style>
 .box {
         background-color:#e0e0d1;
@@ -60,7 +60,7 @@ if (isset($_POST['submit2'])){
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
-		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
+		<b id="logout"><a href="../login/logout.php">Log Out</a></b>
 	</div>
 <p align="center"><img src="../img/logo.png"></p>
 <h1 align="center"> Wood Arts Comapany Managment System</h1>
@@ -87,7 +87,7 @@ echo $menu;
       <input name="submit" type="Submit" value="Add"/>
       <input name="reset" type="reset" value="Clear Form">
   </form>
-	<input name="Search" type="submit" value="Search Customer ID" onclick=" window.open('/woodarts/process/allcustomer.php','',' scrollbars=yes,menubar=no,width=500, resizable=yes,toolbar=no,location=no,status=no')" />
+	<input name="Search" type="submit" value="Search Customer ID" onclick=" window.open('../process/allcustomer.php','',' scrollbars=yes,menubar=no,width=500, resizable=yes,toolbar=no,location=no,status=no')" />
  </div>
 </body>
 </html>

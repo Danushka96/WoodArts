@@ -2,11 +2,11 @@
 $branch=$_SESSION['user_branch'];
 session_start();
 if (!isset($_SESSION['login_user'])){
-	header("location: /woodarts/login/index.php");
+	header("location: ../login/index.php");
 }
 if ($_SESSION['login_level']==3){
   echo "Access Denied";
-	header("location: /woodarts/error.html");
+	header("location: ../error.html");
 }
 include_once('../inc/connection.php');
 if ($_SESSION['login_level']==1){
@@ -28,7 +28,7 @@ if(mysqli_num_rows($result)>0){
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
-		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
+		<b id="logout"><a href="../login/logout.php">Log Out</a></b>
 	</div>
 <p align="center"><img src="img/logo.png" width='110' height='100'></p>
 <p align="Center">Delivered Orders Of Your Branch </p>

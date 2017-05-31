@@ -28,7 +28,7 @@ if (isset($_POST['itemID']) || isset($_POST['price'])){
 <head>
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
-<link rel="shortcut icon" href="/woodarts/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <style>
 .box {
         background-color:#e0e0d1;
@@ -43,7 +43,7 @@ if (isset($_POST['itemID']) || isset($_POST['price'])){
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
-		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
+		<b id="logout"><a href="../login/logout.php">Log Out</a></b>
 	</div>
 <p align="center"><img src="../img/logo.png"></p>
 <h1 align="center"> Wood Arts Comapany Managment System</h1>

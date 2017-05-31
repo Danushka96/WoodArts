@@ -29,7 +29,7 @@ $_SESSION['login_user']=$username;
 $_SESSION['login_level']=$userlevel['ulevel'];
 $_SESSION['user_branch']=$userlevel['showroom'];
  // Initializing Session
-header("location: /woodarts/index.php"); // Redirecting To Other Page
+header("location: ../index.php"); // Redirecting To Other Page
 } else {
 $error = "Username or Password is invalid";
 }

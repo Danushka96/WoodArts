@@ -19,12 +19,12 @@ if (!isset($_SESSION['login_user'])){
         width: 300px;
     }
 </style>
-<link rel="shortcut icon" href="/woodarts/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
-		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
+		<b id="logout"><a href="../login/logout.php">Log Out</a></b>
 	</div>
 <p align="center"><img src="../img/logo.png"></p>
 <h1 align="center"> Wood Arts Comapany Managment System</h1>

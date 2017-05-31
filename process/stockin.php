@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['login_user'])){
-	header("location: /woodarts/login/index.php");
+	header("location: ../login/index.php");
 }
 if ($_SESSION['login_level']==2){
   echo "Access Denied";
-	header("location: /woodarts/error.html");
+	header("location: ../error.html");
 }
 $itemID=$_POST['ItemID'];
 include_once('../inc/connection.php');
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])){
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
-		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
+		<b id="logout"><a href="../login/logout.php">Log Out</a></b>
 	</div>
 <p align="center"><img src="img/logo.png" width='110' height='100'></p>
 <p align="Center">New Stock IN </p>

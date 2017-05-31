@@ -1,18 +1,18 @@
 <?php
 session_start();
 if (!isset($_SESSION['login_user'])){
-	header("location: /woodarts/login/index.php");
+	header("location: ../login/index.php");
 }
 if ($_SESSION['login_level']!=1){
   echo "Access Denied";
-	header("location: /woodarts/error.html");
+	header("location: ../error.html");
 }
 ?>
 <html>
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
-		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
+		<b id="logout"><a href="../login/logout.php">Log Out</a></b>
 	</div>
 <p align="center"><img src="img/logo.png" width='110' height='100'></p>
 <p align="Center"><u>Enter Customer Details</u></p>

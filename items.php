@@ -4,7 +4,7 @@ if (!isset($_SESSION['login_user'])){
 	header("location: login/index.php");
 }
 if ($_SESSION['user_level']==2){
-	header("location: ../error.html");
+	header("location: error.html");
 }
 include_once('inc/connection.php');
 $query="SELECT * FROM items";
@@ -26,7 +26,7 @@ if(mysqli_num_rows($result)>0){
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
-		<b id="logout"><a href="/woodarts/login/logout.php">Log Out</a></b>
+		<b id="logout"><a href="login/logout.php">Log Out</a></b>
 	</div>
 <p align="center"><img src="img/logo.png"></p>
 <h1 align="center"> Wood Arts Comapany Managment System</h1>

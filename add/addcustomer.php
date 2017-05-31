@@ -35,7 +35,7 @@ mysqli_close($connection);
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
 <link rel="stylesheet" href="../css/formbox.css">
-<link rel="shortcut icon" href="/woodarts/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<div id="profile">

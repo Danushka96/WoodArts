@@ -6,7 +6,7 @@ include('session.php');
 <head>
 <title>Your Home Page</title>
 <link href="style.css" rel="stylesheet" type="text/css">
-<link rel="shortcut icon" href="/woodarts/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <div id="profile">

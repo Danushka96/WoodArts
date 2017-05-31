@@ -2,7 +2,7 @@
 include('login.php'); // Includes Login Script
 
 if(isset($_SESSION['login_user'])){
-header("location: /woodarts/index.php");
+header("location: ../index.php");
 }
 ?>
 <!DOCTYPE HTML>
@@ -11,7 +11,7 @@ header("location: /woodarts/index.php");
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>System Login</title>
 	<link rel="stylesheet" href="style.css" type="text/css" />
-<link rel="shortcut icon" href="/woodarts/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
 		<h1 align="Center">Welcome to Wood Arts Company Managment System</h1>
