@@ -6,3 +6,14 @@
         height:420px;
         width: 600px;
     }
+
+.qbox {
+        background-color:#659df7;
+        border: 5px solid orange;
+        color:black;
+        font-weight:bold;
+        margin:20px auto;
+        height:300px;
+        width: 320px;
+        float: left;
+  }

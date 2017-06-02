@@ -23,6 +23,7 @@ if (isset($_POST['submit'])){
     echo "<script type='text/javascript'>alert('Updated successfully!')</script>";
   }else{
     echo "<script type='text/javascript'>alert('Error While Processing!')</script>";
+		$sql=mysqli_error($connection);
   }
 
 }
@@ -35,6 +36,7 @@ if (isset($_POST['submit'])){
 <head>
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
+<link rel="stylesheet" href="../css/formbox.css">
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <style>
 .box {
@@ -58,10 +60,16 @@ if (isset($_POST['submit'])){
 require_once('../process/menu.php');
 echo $menu;
  ?>
+
+ <div class="qbox">
+ 	<h2 align="center"><u>Query Box</U></h2>
+ 		<p><?php echo $sql; ?></p>
+ </div>
+
 <div class="box">
 <h1 align="center">Update Item Record</h1>
 <form method ="post" action="items.php" >
-      <label for="itemID">Item ID:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <label for="itemID">Item ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
       <input name="itemID" type="text" value="<?php echo $itemID ?>"/>
       <input type="submit" name="submit2" value="search"><br><br>
       <label for="itemname">Item Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>

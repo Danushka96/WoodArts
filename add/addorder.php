@@ -14,12 +14,13 @@ if (isset($_POST['submit'])){
 		$date=$_POST['date'];
 		$ddate=$_POST['ddate'];
 
-		$sql="INSERT INTO Orders (CID, ItemID, BranchID, Quantity, Dateissue, DeliverDate) VALUES ('$client','$itemid','$branch','$qty','$date','$ddate')";
+		$sql="INSERT INTO Orders (CID, ItemID, BranchID, Quantity, Dateissue, DeliverDate) VALUES ('$client', '$itemid', '$branch', '$qty', '$date', '$ddate')";
 		$result=mysqli_query($connection,$sql);
 		if ($result) {
 				 echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
 			} else {
 				echo "<script type='text/javascript'>alert('failed!')</script>";
+				$sql=mysqli_error($connection);
 			}
 }
 if (isset($_POST['submit2'])){
@@ -45,6 +46,7 @@ if (isset($_POST['submit2'])){
 <head>
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
+<link rel="stylesheet" href="../css/formbox.css">
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <style>
 .box {
@@ -68,6 +70,12 @@ if (isset($_POST['submit2'])){
 require_once('../process/menu.php');
 echo $menu;
  ?>
+
+ <div class="qbox">
+ 	<h2 align="center"><u>Query Box</U></h2>
+ 		<p><?php echo $sql; ?></p>
+ </div>
+
 <div class="box">
 <h1 align="center">Add New Order Record</h1>
 <form method ="post" action="addorder.php" >

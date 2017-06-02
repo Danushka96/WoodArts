@@ -11,7 +11,6 @@ if ($loginlevel==1){
         <a href='/woodarts/add/addcustomer.php'>Add a Customer</a>
         <a href='/woodarts/add/additem.php'>Add an Item</a>
         <a href='/woodarts/add/addorder.php'>Add a Order</a>
-  			<a href='/woodarts/add/adduser.php'>Add New User</a>
         <a href='/woodarts/add/newbranch.php'>Add New Showroom</a>
       </div>
     </div>

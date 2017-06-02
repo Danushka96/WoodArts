@@ -20,9 +20,24 @@ if(mysqli_num_rows($result)>0){
 	while($row=mysqli_fetch_assoc($result)){
 		$str.="<tr><td>$row[OrderID]</td><td>$row[CID]</td><td>$row[Dateissue]</td><td>$row[DeliverDate]</td><td>$row[Statues]</td></tr>";
 	}
+}else{
+	$query=mysqli_error($connection);
 }
 ?>
 <html>
+<head>
+	<style>
+	.qbox {
+	        background-color:#659df7;
+	        border: 5px solid orange;
+	        color:black;
+	        font-weight:bold;
+	        margin:20px auto;
+	        height:150px;
+	        width: 420px;
+	  }
+	</style>
+</head>
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
@@ -42,7 +57,10 @@ if(mysqli_num_rows($result)>0){
 	</tr>
 	<?php if(isset($str)) {echo $str;} ?>
 </p>
-
+<div class="qbox">
+	<h2 align="center"><u>Query Box</U></h2>
+		<p><?php echo $query; ?></p>
+</div>
 
 </body>
 </html>

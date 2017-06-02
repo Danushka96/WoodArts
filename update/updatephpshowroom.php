@@ -15,5 +15,19 @@ if (isset($result)){
 }
 else{
   echo "<script type='text/javascript'>alert('Something Went Wrong!')</script>";
+  $query=mysqli_error($connection);
 }
  ?>
+<html>
+<head>
+<link rel="stylesheet" href="../css/formbox.css">
+</head>
+<body>
+  <p align="center">
+  <div class="qbox">
+  	<h2 align="center"><u>Query Box</U></h2>
+  		<p><?php echo $query; ?></p>
+  </div>
+</p>
+</body>
+</html>

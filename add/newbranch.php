@@ -11,12 +11,13 @@ if (isset($_POST['submit'])){
   $address3=$_POST['AddressL3'];
   $phone=$_POST['phone'];
 
-  $sql="INSERT INTO showrooms (District, Address1, Address2, Address3, PhoneNo) VALUES ('$district','$address1','$address2','$address3','$phone')";
+  $sql="INSERT INTO showrooms (District, Address1, Address2, Address3, PhoneNo) VALUES ('$district', '$address1', '$address2', '$address3', '$phone')";
   $result=mysqli_query($connection,$sql);
   if ($result) {
        echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
     } else {
       echo "<script type='text/javascript'>alert('failed!')</script>";
+			$sql=mysqli_error($connection);
     }
 }
 
@@ -27,6 +28,7 @@ if (isset($_POST['submit'])){
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
 <link rel="stylesheet" href="../css/button.css">
+<link rel="stylesheet" href="../css/formbox.css">
 <style>
 .box {
         background-color:#e0e0d1;
@@ -50,6 +52,10 @@ if (isset($_POST['submit'])){
 require_once('../process/menu.php');
 echo $menu;
  ?>
+ <div class="qbox">
+ 	<h2 align="center"><u>Query Box</U></h2>
+ 		<p><?php echo $sql; ?></p>
+ </div>
 <div class="box">
   <h2 align='center'>Add New Showroom</h2>
   <form method="post" action="newbranch.php">

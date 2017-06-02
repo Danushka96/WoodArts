@@ -3,10 +3,7 @@ session_start();
 if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
-if ($_SESSION['login_level']==2){
-  echo "Access Denied";
-	header("location: ../error.html");
-}
+
 $itemID=$_POST['ItemID'];
 include_once('../inc/connection.php');
 $query="SELECT * FROM items WHERE ItemID=$itemID";
@@ -26,6 +23,7 @@ if (isset($_POST['submit'])){
        echo "<script type='text/javascript'>alert('Updated successfully!')</script>";
     } else {
       echo "<script type='text/javascript'>alert('failed!')</script>";
+			$sql=mysqli_error($connection);
     }
 }
 
@@ -33,6 +31,21 @@ if (isset($_POST['submit'])){
 
 ?>
 <html>
+<head>
+	<style>
+	.qbox {
+	        background-color:#659df7;
+	        border: 5px solid orange;
+	        color:black;
+	        font-weight:bold;
+	        margin:20px auto;
+	        height:150px;
+	        width: 620px;
+
+	  }
+
+	</style>
+</head>
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
@@ -40,6 +53,8 @@ if (isset($_POST['submit'])){
 	</div>
 <p align="center"><img src="img/logo.png" width='110' height='100'></p>
 <p align="Center">New Stock IN </p>
+
+
 <form method="post" action="stockin.php">
   <p align = "Center">
   <lable for="itemID">Item ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</lable>
@@ -52,5 +67,9 @@ if (isset($_POST['submit'])){
   <input type="number" name="new"><br><br>
   <input type="submit" name="submit" value="Update">
 </p>
+<div class="qbox">
+	<h2 align="center"><u>Query Box</U></h2>
+		<p><?php echo $sql; ?></p>
+</div>
 </body>
 </html>

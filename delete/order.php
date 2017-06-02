@@ -12,6 +12,7 @@ if (isset($_POST['submit'])){
 		echo "<script type='text/javascript'>alert('Deleted successfully!')</script>";
  	} else {
 	 	echo "<script type='text/javascript'>alert('failed!')</script>";
+		$sql=mysqli_error($connection);
  }
 }
 ?>
@@ -20,6 +21,7 @@ if (isset($_POST['submit'])){
 <head>
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
+<link rel="stylesheet" href="../css/formbox.css">
 <style>
 .box {
         background-color:#e0e0d1;
@@ -55,6 +57,11 @@ function deletecheck() {
 require_once('../process/menu.php');
 echo $menu;
  ?>
+ <div class="qbox">
+ 	<h2 align="center"><u>Query Box</U></h2>
+ 		<p><?php echo $sql; ?></p>
+ </div>
+
 <div class="box">
 <h1 align="center">Delete Order </h1>
 <form method ="post" onclick="deletecheck()" action="order.php">

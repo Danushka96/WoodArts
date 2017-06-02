@@ -9,6 +9,7 @@ if (!isset($_SESSION['login_user'])){
 <head>
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
+
 <style>
 .box {
         background-color:#e0e0d1;

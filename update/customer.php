@@ -3,7 +3,6 @@ session_start();
 if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
-
 ?>
 <?php
 require_once('../inc/connection.php');
@@ -24,6 +23,7 @@ if (isset($_POST['submit'])){
 				 echo "<script type='text/javascript'>alert('Updated successfully!')</script>";
 			} else {
 				echo "<script type='text/javascript'>alert('failed!')</script>";
+
 			}
 }
 if (isset($_POST['submit2'])){
@@ -49,6 +49,7 @@ mysqli_close($connection);
 <head>
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
+<link rel="stylesheet" href="../css/formbox.css">
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <style>
 .box {
@@ -72,7 +73,10 @@ mysqli_close($connection);
 require_once('../process/menu.php');
 echo $menu;
  ?>
-
+ <div class="qbox">
+ 	<h2 align="center"><u>Query Box</U></h2>
+ 		<p><?php echo $sql; ?></p>
+ </div>
 <div class="box">
 <h1 align="center">Update Customer Record</h1>
 <form method ="POST" action="customer.php">

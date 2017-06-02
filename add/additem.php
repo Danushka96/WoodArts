@@ -12,12 +12,13 @@ if (isset($_POST['itemID']) || isset($_POST['price'])){
 		$ItemName=$_POST['itemname'];
 		$price=$_POST['price'];
 
-		$sql="INSERT INTO items (ItemID, ItemName, price, type) VALUES ('$itemID','$ItemName','$price','$type')";
+		$sql="INSERT INTO items (ItemID, ItemName, price, type) VALUES ('$itemID', '$ItemName', '$price', '$type')";
 		$result=mysqli_query($connection,$sql);
 		if ($result) {
 				 echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
 			} else {
 				echo "<script type='text/javascript'>alert('failed!')</script>";
+				$sql=mysqli_error($connection);
 			}
 }
 ?>
@@ -28,6 +29,7 @@ if (isset($_POST['itemID']) || isset($_POST['price'])){
 <head>
 	<title>WoodArts Company</title>
 <link rel="stylesheet" href="../css/navmenu.css">
+<link rel="stylesheet" href="../css/formbox.css">
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <style>
 .box {
@@ -51,6 +53,11 @@ if (isset($_POST['itemID']) || isset($_POST['price'])){
 require_once('../process/menu.php');
 echo $menu;
  ?>
+ <div class="qbox">
+ 	<h2 align="center"><u>Query Box</U></h2>
+ 		<p><?php echo $sql; ?></p>
+ </div>
+
 <div class="box">
 <h1 align="center">Add New Item Record</h1>
 <form method ="post" action="additem.php" >

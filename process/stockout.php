@@ -26,6 +26,7 @@ if (isset($_POST['submit'])){
        echo "<script type='text/javascript'>alert('Updated successfully!')</script>";
     } else {
       echo "<script type='text/javascript'>alert('failed!')</script>";
+			$sql=mysqli_error($connection);
     }
 }
 
@@ -33,6 +34,19 @@ if (isset($_POST['submit'])){
 
 ?>
 <html>
+<head>
+	<style>
+	.qbox {
+	        background-color:#659df7;
+	        border: 5px solid orange;
+	        color:black;
+	        font-weight:bold;
+	        margin:20px auto;
+	        height:150px;
+	        width: 620px;
+	  }
+	</style>
+</head>
 <body>
 	<div id="profile">
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
@@ -52,5 +66,9 @@ if (isset($_POST['submit'])){
   <input type="number" name="new"><br><br>
   <input type="submit" name="submit" value="Update">
 </p>
+<div class="qbox">
+	<h2 align="center"><u>Query Box</U></h2>
+		<p><?php echo $sql; ?></p>
+</div>
 </body>
 </html>

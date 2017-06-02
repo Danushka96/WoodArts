@@ -36,8 +36,7 @@ echo $menu;
 <p align="center">
 <br><br><br>
 <button class="buttonred button3" onclick=" window.open('add/newbranch.php')">Add New Showroom</button>
-<button class="buttongreen button3" onclick=" window.open('update/updatebranch.php','',' scrollbars=yes,menubar=no,width=500,height=300 resizable=yes,toolbar=no,location=no,status=no')">Update Showroom Info</button>
-<button class="buttonpink button3" onclick=" window.open('process/barnchinfo.php','',' scrollbars=yes,menubar=no,width=500, resizable=yes,toolbar=no,location=no,status=no')">View Showroom Info</button>
+<button class="buttongreen button3" onclick=" window.open('update/updatebranch.php','',' scrollbars=yes,menubar=no,width=500,height=800 resizable=yes,toolbar=no,location=no,status=no')">Update Showroom Info</button>
 </p>
  </div>
 </body>

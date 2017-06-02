@@ -6,7 +6,6 @@ if ($loginlevel==1){
   <li><u><b>Add</u></b>
     <ul>
       <li><a href='add/newbranch.php'> Add new Showroom </a></li>
-      <li><a href='add/adduser.php'> Add New User </a></li>
       <li><a href='add/additem.php'> Add New Item </a></li>
       <li><a href='add/addcustomer.php'> Add New Customer </a></li>
       <li><a href='add/addorder.php'> Add New Order </a></li>
@@ -17,6 +16,7 @@ if ($loginlevel==1){
       <li><a href='update/showroom.php'> Update Showroom info </a></li>
       <li><a href='update/items.php'> Update Item Details </a></li>
       <li><a href='update/customer.php'> Update Customer Deatils </a></li>
+      <li><a href='deliver.php'> Update Deliver Status </a></li>
     </ul>
   </li><br>
   <li><u><b>Delete</u></b>
@@ -42,22 +42,31 @@ if ($loginlevel==1){
     <ul>
       <li><a href='add/addcustomer.php'> Add New Customer </a></li>
       <li><a href='add/addorder.php'> Add New Order </a></li>
+      <li><a href='add/newbranch.php' style='color:red'> Add new Showroom </a></li>
+      <li><a href='add/additem.php' style='color:red'> Add New Item </a></li>
     </ul><br>
   </li>
   <li><u><b>Update</u></b>
     <ul>
+      <li><a href='update/showroom.php' style='color:red'> Update Showroom info </a></li>
       <li><a href='update/items.php'> Update Item Details </a></li>
       <li><a href='update/customer.php'> Update Customer Deatils </a></li>
+      <li><a href='deliver.php' style='color:red'> Update Deliver Status </a></li>
     </ul>
   </li><br>
   <li><u><b>Delete</u></b>
     <ul>
-      <li>No Permission To Delete
+      <li><a href='delete/customer.php' style='color:red'> Delete a Customer </a></li>
+      <li><a href='delete/order.php' style='color:red'> Delete an Order </a></li>
+      <li><a href='delete/item.php' style='color:red'> Delete an Item </a></li>
+      <li><a href='delete/showroom.php' style='color:red'> Delete a Showroom </a></li>
     </ul>
   </li><br>
   <li><u><b>View</u></b>
     <ul>
-      <li>Limited Permision</li>
+      <li><a href='items.php' style='color:red'> View Current Item Stock </a></li>
+      <li><a href='deliver.php' style='color:red'> View Deliver Status </a></li>
+      <li><a href='process/allcustomer.php' style='color:red'> View All cutomers </a></li>
     </ul>
   </li><br>
 </ol>";
@@ -66,25 +75,33 @@ if ($loginlevel==1){
   $permissionstat="<ol>
   <li><u><b>Add</u></b>
     <ul>
+      <li><a href='add/addcustomer.php' style='color:red'> Add New Customer </a></li>
+      <li><a href='add/addorder.php' style='color:red'> Add New Order </a></li>
+      <li><a href='add/newbranch.php' style='color:red'> Add new Showroom </a></li>
       <li><a href='add/additem.php'> Add New Item </a></li>
     </ul><br>
   </li>
   <li><u><b>Update</u></b>
     <ul>
-      <li><a href='update/items.php'> Update Item Details </a></li>
-      <li><a href='process/update/deliver.php'> Update Deliver Status </a></li>
+      <li><a href='update/showroom.php' style='color:red'> Update Showroom info </a></li>
+      <li><a href='update/items.php' style='color:red'> Update Item Details </a></li>
+      <li><a href='deliver.php'> Update Deliver Status </a></li>
       <li><a href='update/updateqty.php'> Update Stock Quantity </a></li>
     </ul>
   </li><br>
   <li><u><b>Delete</u></b>
     <ul>
       <li><a href='delete/item.php'> Delete an Item </a></li>
+      <li><a href='delete/customer.php' style='color:red'> Delete a Customer </a></li>
+      <li><a href='delete/order.php' style='color:red'> Delete an Order </a></li>
+      <li><a href='delete/showroom.php' style='color:red'> Delete a Showroom </a></li>
     </ul>
   </li><br>
   <li><u><b>View</u></b>
     <ul>
       <li><a href='items.php'> View Current Item Stock </a></li>
       <li><a href='deliver.php'> View Deliver Status </a></li>
+      <li><a href='process/allcustomer.php' style='color:red'> View All cutomers </a></li>
     </ul>
   </li><br>
 </ol>";

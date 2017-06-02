@@ -18,12 +18,13 @@ if (isset($_POST['fname']) || isset($_POST['lname'])){
 		$phone=$_POST['phone'];
 		$branch=$_SESSION['user_branch'];
 
-		$sql="INSERT INTO customer (CFName, CLName, CEmail, CAddress1, CAddress2, CAddress3, BranchID, CTPno) VALUES ('$fname','$lname','$email','$address1','$address2','$address3', '$branch','$phone')";
+		$sql="INSERT INTO customer (CFName, CLName, CEmail, CAddress1, CAddress2, CAddress3, BranchID, CTPno) VALUES ('$fname', '$lname', '$email', '$address1', '$address2', '$address3', '$branch','$phone')";
 		$result=mysqli_query($connection,$sql);
 		if ($result) {
 				 echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
 			} else {
 				echo "<script type='text/javascript'>alert('failed!')</script>";
+				$sql=mysqli_error($connection);
 			}
 }
 mysqli_close($connection);
@@ -48,6 +49,11 @@ mysqli_close($connection);
 require_once('../process/menu.php');
 echo $menu;
  ?>
+
+<div class="qbox">
+	<h2 align="center"><u>Query Box</U></h2>
+		<p><?php echo $sql; ?></p>
+</div>
 
 <div class="box">
 <h1 align="center">Add New Customer Record</h1>

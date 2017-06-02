@@ -34,7 +34,12 @@ if(mysqli_num_rows($result)>0){
 require_once('process/menu.php');
 echo $menu;
  ?>
+ <div class="qbox">
+ 	<h2 align="center"><u>Query Box</U></h2>
+ 		<p><?php echo $query; ?></p>
+ </div>
 <h1 align="center">Available Items and Quantity</h1>
+
 
 <table caption='All available Items' border='2' align='center' style="width:800px">
 	<tr>

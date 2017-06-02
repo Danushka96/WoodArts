@@ -3,9 +3,6 @@ session_start();
 if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
-if ($_SESSION['login_level']!=1){
-	header("location: ../error.html");
-}
 ?>
 <html>
 
@@ -17,7 +14,7 @@ if ($_SESSION['login_level']!=1){
 <p align="center"><img src="../img/logo.png" width='110' height='100'></p>
 <p align="Center"><u>Update Showroom Details</u></p>
 <div class='box'>
-<form method="post" action='updateshowroom.php'>
+<form method="post" action='showroom.php'>
   <lable for='Select'> Select the Showroom </lable>
   <select name='branch'>
     <option value="1">Moratuwa</option>

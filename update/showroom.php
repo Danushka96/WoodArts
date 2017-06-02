@@ -3,9 +3,6 @@ session_start();
 if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
-if ($_SESSION['login_level']!=1){
-	header("location: ../error.html");
-}
 
 $showroom=$_POST['branch'];
 require_once('../inc/connection.php');
@@ -41,8 +38,7 @@ $TP=$result['PhoneNo'];
 		<b id="welcome">User : <i><?php echo $_SESSION['login_user']; ?></i></b>
 		<b id="logout"><a href="../login/logout.php">Log Out</a></b>
 	</div>
-  <p align="center"><img src="../img/logo.png"></p>
-  <h1 align="center"> Wood Arts Comapany Managment System</h1>
+  <p align="center"><img src="../img/logo.png" width='110' height='100'></p>
 
 <div class='box'>
 <p align="Center"><u>Update Showroom Details</u></p>
