@@ -31,6 +31,18 @@ if (isset($_POST['submit'])){
     }
 </style>
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+<script type="text/javascript">
+function deletecheck() {
+	var ans=confirm("Are You Sure you want to Delete this Record?")
+		if (ans){
+			return true;
+		}else{
+			return false;
+		}
+}
+</script>
+
 </head>
 <body>
 	<div id="profile">
@@ -45,7 +57,7 @@ echo $menu;
  ?>
 <div class="box">
 <h1 align="center">Delete Customer </h1>
-<form method ="post" action="customer.php">
+<form method ="post" onclick="deletecheck()" action="customer.php">
       <label for="CID">Customer ID:</label>
       <input name="CID" type="text" />
       <p align="center">
