@@ -1,13 +1,10 @@
 <?php
+session_start();
+$username=$_SESSION['sqluser'];
+$password=$_SESSION['sqlpassword'];
 
-	//Connecting To the DataBase Server
-
-	$connection = mysqli_connect('localhost', 'root', '', 'woodsart');
+	$connection = mysqli_connect('localhost', $username, $password, 'woodsart');
 
 	//Checking Errors
 
-	if (mysql_errno()) {
-		die('SORRY BRO! Connection to the Database has failed' . mysqli_connect_error());
-	}
-
-?>
+	?>

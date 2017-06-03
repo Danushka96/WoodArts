@@ -10,7 +10,7 @@ else
 $username=$_POST['username'];
 $password=$_POST['password'];
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
-include_once('../inc/connection.php');
+include_once('../inc/config.php');
 // To protect MySQL injection for Security purpose
 $username = stripslashes($username);
 $password = stripslashes($password);
@@ -29,12 +29,21 @@ $_SESSION['login_user']=$username;
 $_SESSION['login_level']=$userlevel['ulevel'];
 $_SESSION['user_branch']=$userlevel['showroom'];
   if ($userlevel['ulevel']==1){
-    
+    $_SESSION['sqluser']="manager";
+    $_SESSION['sqlpassword']="manager";
+  }else if ($userlevel['ulevel']==2) {
+    $_SESSION['sqluser']="operator";
+    $_SESSION['sqlpassword']="operator";
+  }else {
+    $_SESSION['sqluser']="stock";
+    $_SESSION['sqlpassword']="stock";
   }
  // Initializing Session
 header("location: ../index.php"); // Redirecting To Other Page
 } else {
 $error = "Username or Password is invalid";
+echo "<script type='text/javascript'>alert('Username or Password Invalied')</script>";
+echo "<a href='index.php'>Try Again</a>";
 }
 mysqli_close($connection); // Closing Connection
 }
