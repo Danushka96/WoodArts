@@ -3,19 +3,21 @@ session_start();
 if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
-$fname=$_POST['fname'];
-$lname=$_POST['lname'];
-include_once('../inc/connection.php');
-$query="SELECT CID,CFName,CLName,CTPno FROM customer where CFName LIKE '%$fname%' and CLName like '%$lname%'";
-$result=mysqli_query($connection,$query);
+if (isset($_POST['submit'])){
+	$fname=$_POST['fname'];
+	$lname=$_POST['lname'];
+	include_once('../inc/connection.php');
+	$query="SELECT CID,CFName,CLName,CTPno FROM customer where CFName LIKE '%$fname%' and CLName like '%$lname%'";
+	$result=mysqli_query($connection,$query);
 
-if(mysqli_num_rows($result)>0){
-	$str='';
-	while($row=mysqli_fetch_assoc($result)){
-		$str.="<tr><td>$row[CID]</td><td>$row[CFName]</td><td>$row[CLName]</td><td>$row[CTPno]</td></tr>";
+	if(mysqli_num_rows($result)>0){
+		$str='';
+		while($row=mysqli_fetch_assoc($result)){
+			$str.="<tr><td>$row[CID]</td><td>$row[CFName]</td><td>$row[CLName]</td><td>$row[CTPno]</td></tr>";
+		}
+	}else{
+		$query=mysqli_error($connection);
 	}
-}else{
-	$query=mysqli_error($connection);
 }
 ?>
 <html>

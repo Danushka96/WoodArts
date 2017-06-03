@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $loginlevel=$_SESSION['login_level'];
 if ($loginlevel==1){
   $menu="
@@ -37,6 +37,7 @@ if ($loginlevel==1){
         <a href='/woodarts/update/updateqty.php'>Update Quantity</a>
       </div>
     </div>
+    <a href='/woodarts/view/factory.php'>Factory Status</a>
   	<a href='/woodarts/deliver.php'>Deliver Status</a>
   	<a href='/woodarts/process/allcustomer.php' target=blank>All Customers</a>
   	<a href='/woodarts/branch.php'>Show room Info</a>
@@ -88,6 +89,7 @@ if ($loginlevel==1){
         <a href='/woodarts/update/updateqty.php'>Update Quantity</a>
       </div>
     </div>
+    <a href='/woodarts/view/factory.php'>Factory Status</a>
   	<a href='/woodarts/deliver.php'>Deliver Status</a>
   </div>";
 }

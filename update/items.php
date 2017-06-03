@@ -11,6 +11,10 @@ if (isset($_POST['submit2'])){
     $array=mysqli_fetch_array($result);
     $Itemname=$array['ItemName'];
     $price=$array['price'];
+}else{
+	$Itemname="";
+	$price="";
+	$sql="";
 }
 if (isset($_POST['submit'])){
   $ItemID=$_POST['itemID'];

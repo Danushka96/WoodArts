@@ -26,6 +26,8 @@ if (isset($_POST['fname']) || isset($_POST['lname'])){
 				echo "<script type='text/javascript'>alert('failed!')</script>";
 				$sql=mysqli_error($connection);
 			}
+}else{
+	$sql="";
 }
 mysqli_close($connection);
 ?>

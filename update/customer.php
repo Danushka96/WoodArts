@@ -25,12 +25,14 @@ if (isset($_POST['submit'])){
 				echo "<script type='text/javascript'>alert('failed!')</script>";
 
 			}
+}else{
+	$sql="";
 }
 if (isset($_POST['submit2'])){
   $CID=$_POST['CID'];
   $value="readonly";
-  $query2="SELECT * FROM customer WHERE CID=$CID";
-  $result2=mysqli_query($connection,$query2);
+  $sql="SELECT * FROM customer WHERE CID=$CID";
+  $result2=mysqli_query($connection,$sql);
 	$array2=mysqli_fetch_array($result2);
   $firstname=$array2['CFName'];
   $lastname=$array2['CLName'];
@@ -39,7 +41,17 @@ if (isset($_POST['submit2'])){
   $add3=$array2['CAddress3'];
   $mail=$array2['CEmail'];
   $TP=$array2['CTPno'];
-
+}else{
+	$value="";
+	$CID="";
+	$firstname="";
+	$lastname="";
+	$add1="";
+	$add2="";
+	$add3="";
+	$mail="";
+	$TP="";
+	$sql="";
 }
 mysqli_close($connection);
 ?>

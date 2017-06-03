@@ -28,6 +28,9 @@ session_start();
 $_SESSION['login_user']=$username;
 $_SESSION['login_level']=$userlevel['ulevel'];
 $_SESSION['user_branch']=$userlevel['showroom'];
+  if ($userlevel['ulevel']==1){
+    
+  }
  // Initializing Session
 header("location: ../index.php"); // Redirecting To Other Page
 } else {

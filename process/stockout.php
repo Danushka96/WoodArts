@@ -3,18 +3,15 @@ session_start();
 if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
-if ($_SESSION['login_level']==2){
-  echo "Access Denied";
-	header("location: ../error.html");
-}
-$itemID=$_POST['ItemID'];
 include_once('../inc/connection.php');
-$query="SELECT * FROM items WHERE ItemID=$itemID";
-$result=mysqli_query($connection,$query);
-$array2=mysqli_fetch_array($result);
-$name=$array2['ItemName'];
-$qty=$array2['Quantity'];
-
+if (isset($_POST['submitout'])){
+	$itemID=$_POST['ItemID'];
+	$query="SELECT * FROM items WHERE ItemID=$itemID";
+	$result=mysqli_query($connection,$query);
+	$array2=mysqli_fetch_array($result);
+	$name=$array2['ItemName'];
+	$qty=$array2['Quantity'];
+}
 if (isset($_POST['submit'])){
   $itemID=$_POST['itemID'];
   $name2=$_POST['itemname'];
@@ -28,6 +25,8 @@ if (isset($_POST['submit'])){
       echo "<script type='text/javascript'>alert('failed!')</script>";
 			$sql=mysqli_error($connection);
     }
+}else{
+	$sql="";
 }
 
 
@@ -61,7 +60,7 @@ if (isset($_POST['submit'])){
   <lable for="itemname">Item Name:</lable>
   <input type="text" name="itemname" value="<?php echo $name; ?>"><br><br>
   <lable for="Quantity">In Store:</lable>
-  <input type="number" name="itemqty" value="<?php echo $qty; ?>"><br><br>
+  <input type="number" name="itemqty" value="<?php echo $qty; ?>" readonly="true"><br><br>
   <lable for="new">New store out:</lable>
   <input type="number" name="new"><br><br>
   <input type="submit" name="submit" value="Update">

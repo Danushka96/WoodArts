@@ -20,6 +20,8 @@ if (isset($_POST['itemID']) || isset($_POST['price'])){
 				echo "<script type='text/javascript'>alert('failed!')</script>";
 				$sql=mysqli_error($connection);
 			}
+}else{
+	$sql="";
 }
 ?>
 <?php mysqli_close($connection); ?>

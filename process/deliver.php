@@ -1,6 +1,6 @@
 <?php
-$branch=$_SESSION['user_branch'];
 session_start();
+$branch=$_SESSION['user_branch'];
 if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }

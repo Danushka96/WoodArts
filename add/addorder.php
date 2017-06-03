@@ -13,8 +13,9 @@ if (isset($_POST['submit'])){
 		$qty=$_POST['qty'];
 		$date=$_POST['date'];
 		$ddate=$_POST['ddate'];
+		$type=$_SESSION['type'];
 
-		$sql="INSERT INTO Orders (CID, ItemID, BranchID, Quantity, Dateissue, DeliverDate) VALUES ('$client', '$itemid', '$branch', '$qty', '$date', '$ddate')";
+		$sql="INSERT INTO Orders (CID, ItemID, BranchID, Quantity, Dateissue, DeliverDate, type) VALUES ('$client', '$itemid', '$branch', '$qty', '$date', '$ddate', '$type')";
 		$result=mysqli_query($connection,$sql);
 		if ($result) {
 				 echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
@@ -22,6 +23,8 @@ if (isset($_POST['submit'])){
 				echo "<script type='text/javascript'>alert('failed!')</script>";
 				$sql=mysqli_error($connection);
 			}
+}else{
+	$sql="";
 }
 if (isset($_POST['submit2'])){
 	$item=$_POST['itemID'];
@@ -34,8 +37,10 @@ if (isset($_POST['submit2'])){
 	$quantity2=$array2['Quantity'];
 	if($qnty>$quantity2){
 		$date=Date('20y-m-d', strtotime("+30 days"));
+		$_SESSION['type']="Factory";
 	}else{
 		$date=Date('20y-m-d', strtotime("+3 days"));
+		$_SESSION['type']="Stock";
 	}
 }
 ?>

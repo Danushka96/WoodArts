@@ -9,7 +9,8 @@ if ($_SESSION['login_level']!=1){
 }
 if (isset($_POST['username']) || isset($_POST['password'])){
 	$username=$_POST['username'];
-	$password=$_POST['password'];
+	$pass=$_POST['password'];
+	$password=md5($password);
 	$level=$_POST['permission'];
 	$sql="INSERT INTO users (username,password,ulevel) VALUES ('$username','$password','$level')";
 	$result=mysqli_query($connection,$sql);

@@ -3,14 +3,15 @@ session_start();
 if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
-
-$itemID=$_POST['ItemID'];
 include_once('../inc/connection.php');
+if (isset($_POST['submitin'])){
+$itemID=$_POST['ItemID'];
 $query="SELECT * FROM items WHERE ItemID=$itemID";
 $result=mysqli_query($connection,$query);
 $array2=mysqli_fetch_array($result);
 $name=$array2['ItemName'];
 $qty=$array2['Quantity'];
+}
 
 if (isset($_POST['submit'])){
   $itemID=$_POST['itemID'];
@@ -25,6 +26,8 @@ if (isset($_POST['submit'])){
       echo "<script type='text/javascript'>alert('failed!')</script>";
 			$sql=mysqli_error($connection);
     }
+}else{
+	$sql="";
 }
 
 

@@ -14,6 +14,8 @@ if (isset($_POST['submit'])){
 	 	echo "<script type='text/javascript'>alert('failed!')</script>";
 		$sql=mysqli_error($connection);
  }
+}else{
+	$sql="";
 }
 ?>
 <!DOCTYPE html>
