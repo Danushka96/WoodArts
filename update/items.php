@@ -12,6 +12,7 @@ if (isset($_POST['submit2'])){
     $Itemname=$array['ItemName'];
     $price=$array['price'];
 }else{
+	$itemID="";
 	$Itemname="";
 	$price="";
 	$sql="";

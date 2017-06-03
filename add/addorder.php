@@ -42,6 +42,11 @@ if (isset($_POST['submit2'])){
 		$date=Date('20y-m-d', strtotime("+3 days"));
 		$_SESSION['type']="Stock";
 	}
+}else{
+	$item="";
+	$clients="";
+	$qnty="";
+	$date="";
 }
 ?>
 <?php mysqli_close($connection); ?>

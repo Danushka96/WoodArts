@@ -6,7 +6,7 @@ if (!isset($_SESSION['login_user'])){
 }
 include_once('../inc/connection.php');
 if ($_SESSION['login_level']==1){
-	$query="SELECT OrderID,CID,Dateissue,DeliverDate,Statues FROM `Orders` WHERE Statues LIKE '%delivered%';";
+	$query="SELECT OrderID,CID,Dateissue,DeliverDate,Statues FROM `Orders` WHERE Statues='delivered';";
 }else{
 	$query="SELECT OrderID,CID,Dateissue,DeliverDate,Statues FROM `Orders` WHERE Statues='delivered' AND BranchID='$branch';";
 }
