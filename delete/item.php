@@ -4,8 +4,8 @@ if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
 include_once('../inc/connection.php');
-$itemID=$_POST['ItemID'];
 if (isset($_POST['submit'])){
+	$itemID=$_POST['ItemID'];
 	$query="DELETE FROM items WHERE ItemID='$itemID'";
 	$result=mysqli_query($connection,$query);
 	if ($result){

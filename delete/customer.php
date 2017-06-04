@@ -4,8 +4,8 @@ if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
 include_once('../inc/connection.php');
-$CID=$_POST['CID'];
 if (isset($_POST['submit'])){
+	$CID=$_POST['CID'];
 	$query="DELETE FROM customer WHERE CID='$CID'";
 	$result=mysqli_query($connection,$query);
 	if ($result){

@@ -1,4 +1,5 @@
 <?php
+Session_start();
 //resive Variables and assign
 $Showroom=$_POST['showroomid'];
 $District=$_POST['District'];
