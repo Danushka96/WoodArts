@@ -3,9 +3,6 @@ session_start();
 if (!isset($_SESSION['login_user'])){
 	header("location: login/index.php");
 }
-if ($_SESSION['user_level']==2){
-	header("location: error.html");
-}
 include_once('inc/connection.php');
 $query="SELECT * FROM items";
 $result=mysqli_query($connection,$query);
