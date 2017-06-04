@@ -6,9 +6,11 @@ if (!isset($_SESSION['login_user'])){
 }
 include_once('../inc/connection.php');
 if ($_SESSION['login_level']==1){
-	$query="SELECT OrderID,CID,Dateissue,DeliverDate,Statues FROM `Orders` WHERE Statues='delivered';";
+	$query="SELECT OrderID, CID, Dateissue, DeliverDate, Statues FROM `Orders` WHERE Statues='delivered';";
+}else if ($_SESSION['login_level']==3){
+	$query="SELECT OrderID, CID, Dateissue, DeliverDate, Statues FROM Orders WHERE Orders.Statues='delivered' AND Orders.type='stock' ";
 }else{
-	$query="SELECT OrderID,CID,Dateissue,DeliverDate,Statues FROM `Orders` WHERE Statues='delivered' AND BranchID='$branch';";
+	$query="SELECT OrderID, CID, Dateissue, DeliverDate, Statues FROM `Orders` WHERE Statues='delivered' AND BranchID='$branch';";
 }
 $result=mysqli_query($connection,$query);
 

@@ -12,7 +12,7 @@ if ($loginlevel==1){
   </li>
   <li><u><b>Update</u></b>
     <ul>
-      <li><a href='update/showroom.php'> Update Showroom info </a></li>
+      <li><a href='update/updatebranch.php'> Update Showroom info </a></li>
       <li><a href='update/items.php'> Update Item Details </a></li>
       <li><a href='update/customer.php'> Update Customer Deatils </a></li>
       <li><a href='deliver.php'> Update Deliver Status </a></li>
@@ -49,7 +49,7 @@ if ($loginlevel==1){
   </li>
   <li><u><b>Update</u></b>
     <ul>
-      <li><a href='update/showroom.php' style='color:red'> Update Showroom info </a></li>
+      <li><a href='update/updatebranch.php' style='color:red'> Update Showroom info </a></li>
       <li><a href='update/items.php'> Update Item Details </a></li>
       <li><a href='update/customer.php'> Update Customer Deatils </a></li>
       <li><a href='deliver.php' style='color:red'> Update Deliver Status </a></li>
@@ -85,7 +85,7 @@ if ($loginlevel==1){
   </li>
   <li><u><b>Update</u></b>
     <ul>
-      <li><a href='update/showroom.php' style='color:red'> Update Showroom info </a></li>
+      <li><a href='update/updatebranch.php' style='color:red'> Update Showroom info </a></li>
       <li><a href='update/items.php' style='color:red'> Update Item Details </a></li>
       <li><a href='deliver.php'> Update Deliver Status </a></li>
       <li><a href='update/updateqty.php'> Update Stock Quantity </a></li>

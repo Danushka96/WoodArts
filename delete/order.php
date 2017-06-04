@@ -66,11 +66,11 @@ echo $menu;
 
 <div class="box">
 <h1 align="center">Delete Order </h1>
-<form method ="post" onclick="deletecheck()" action="order.php">
+<form method ="post" action="order.php">
       <label for="Order">Order ID:</label>
       <input name="OrderID" type="text" />
       <p align="center">
-      <input name="submit" type="Submit" value="Delete"/>
+      <input name="submit" onclick="deletecheck()" type="Submit" value="Delete"/>
   </form>
  </div>
 </body>

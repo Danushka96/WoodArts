@@ -14,6 +14,8 @@ if(mysqli_num_rows($result)>0){
 	while($row=mysqli_fetch_assoc($result)){
 		$str.="<tr><td>$row[ItemID]</td><td>$row[ItemName]</td><td>$row[price]</td><td>$row[type]</td><td>$row[Quantity]</td></tr>";
 	}
+}else{
+	$query=mysqli_error($connection);
 }
 ?>
 <!DOCTYPE html>

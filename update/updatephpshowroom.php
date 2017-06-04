@@ -10,14 +10,13 @@ $TP=$_POST['TPNo'];
 require_once('../inc/connection.php');
 $query="UPDATE showrooms SET District='$District', Address1='$Address1', Address2='$Address2', Address3='$Address3', PhoneNo='$TP' WHERE BranchID='$Showroom'";
 $result=mysqli_query($connection,$query);
-if (isset($result)){
+if ($result){
   echo "<script type='text/javascript'>alert('Updated successfully!')</script>";
-}
-else{
+}else{
   echo "<script type='text/javascript'>alert('Something Went Wrong!')</script>";
   $query=mysqli_error($connection);
 }
- ?>
+?>
 <html>
 <head>
 <link rel="stylesheet" href="../css/formbox.css">
