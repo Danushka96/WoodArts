@@ -4,8 +4,8 @@ if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
 include_once('../inc/connection.php');
-$showroom=$_POST['showroom'];
 if (isset($_POST['submit'])){
+	$showroom=$_POST['showroom'];
 	$query="DELETE FROM showrooms WHERE BranchID='$showroom'";
 	$result=mysqli_query($connection,$query);
 	if ($result){

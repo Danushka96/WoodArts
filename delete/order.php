@@ -4,8 +4,8 @@ if (!isset($_SESSION['login_user'])){
 	header("location: ../login/index.php");
 }
 include_once('../inc/connection.php');
-$OrderID=$_POST['OrderID'];
 if (isset($_POST['submit'])){
+	$OrderID=$_POST['OrderID'];
 	$query="DELETE FROM Orders WHERE OrderID='$OrderID'";
 	$result=mysqli_query($connection,$query);
 	if ($result){
