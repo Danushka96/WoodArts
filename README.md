@@ -12,7 +12,7 @@ A furniture manufacturing company has its showrooms in multiple districts. Manuf
 4. Open phpmyadmin from 'localhost/phpmyadmin'
 5. Create a Database named woodsart
 6. In the woodsart database click on import tab
-5. Import woodsart.sql which located in sql file in the project folder to your new database 
+5. Import woodsart.sql,view.sql,user.sql,permission.sql in order which located in sql file in the project folder to your new database 
 6. Edit the 'inc/connection.php' file with your own details,
 7. Open 'localhost/woodarts' with your web browser
 
